@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGIC</title>
+    <link rel="stylesheet" href="style.css"  >
+</head>
+<body>
+<section id="app">
+    <form action="" id="calculator">
+        <section id="ac">
+            <div id="screen"></div>
+            <div class="result"> </div>
+        </section><hr>
+        <input type="button" id="made" class="operator" value="Made by" onclick="document.getElementById('screen').innerHTML ='Gulam Ishak Cornel'+ '<br>' + '22-03-2020'"; ></button>
+        <input type="button" id = "number" value="fb" onclick="document.getElementById('screen').innerHTML ='m.facebook.com/<br/>MGICORNEL'"; ></button>
+        <input type="button" id="del" class="operator " value="C" >  </button> <br/>
+        <input type="button" value="(" onclick="document.getElementById('screen').innerHTML +='('"; ></button>
+        <input type="button" value=")" onclick="document.getElementById('screen').innerHTML +=')'"; ></button>
+        <input type="button" id="sqs"  value="&Sqrt;"  ></button>
+        <input type="button" value="Del" class="cg" onclick="document.getElementById('screen').innerHTML =document.getElementById('screen').innerHTML.slice(0,-1)" ></button>
+        <input type="button" value="7" onclick="document.getElementById('screen').innerHTML +='7'"; ></button>
+        <input type="button" value="8" onclick="document.getElementById('screen').innerHTML +='8'"; ></button>
+        <input type="button" value="9" onclick="document.getElementById('screen').innerHTML +='9'";  ></button>
+        <input type="button" value="x" class="operator2 "  onclick="document.getElementById('screen').innerHTML +='x'"; ></button>
+        <input type="button" value="4" onclick="document.getElementById('screen').innerHTML +='4'"; ></button>
+        <input type="button" value="5" onclick="document.getElementById('screen').innerHTML +='5'"; ></button>
+        <input type="button" value="6"onclick="document.getElementById('screen').innerHTML +='6'"; ></button>
+        <input type="button" class="operator2"  value="÷" onclick="document.getElementById('screen').innerHTML +='÷'"; ></button><br/>
+        <input type="button" value="1" onclick="document.getElementById('screen').innerHTML +='1'";></button>
+        <input type="button" value="2" onclick="document.getElementById('screen').innerHTML +='2'"; ></button>
+        <input type="button" value="3" onclick="document.getElementById('screen').innerHTML +='3'"; ></button>
+        <input type="button" class="operator2" value="-" onclick="document.getElementById('screen').innerHTML +='-'"; ></button><br/>
+        <input type="button"  value="." onclick="document.getElementById('screen').innerHTML +='.'"; ></button>
+        <input type="button" value="0" onclick="document.getElementById('screen').innerHTML +='0'"; ></button>
+        <input type="button" class="operator2 ev"  value="="  ></button>
+        <input type="button" class="operator2" value="+" onclick="document.getElementById('screen').innerHTML +='+' "  ;></button>
+    </form>
+    <div id="mg">MGIC</div>
+</section>
+
+
+    <script>
+        document.querySelector("#del").addEventListener("click", function(){
+            document.querySelector('#screen').innerHTML= '';
+             document.querySelector('.result').innerHTML= '';
+        } );
+        document.querySelector("#sqs").addEventListener("click", function(){
+            document.getElementsByClassName('result')[0].innerHTML = '='+' '+Math.sqrt(document.getElementById('screen').innerHTML);
+            document.getElementById('screen').innerHTML = Math.sqrt(document.getElementById('screen').innerHTML);
+        });
+        document.querySelector(".ev").addEventListener("click",function(){
+                var evs = document.getElementById('screen').innerHTML;
+                var y = evs.replace(/x/g,"*").replace(/÷/g,"/");
+         document.querySelector('.result').innerHTML = '='+' '+ eval(y);
+        })
+
+         
+    </script>
+</body>
+</html>
